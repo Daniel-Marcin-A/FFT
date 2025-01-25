@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFT Analysis</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./FFT.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+</head>
+
+<body>
+    <main class="container">
+        <h1>FFT Analysis Application</h1>
+
+        <article>
+            <h3>Data for Analysis</h3>
+
+            <div id="samplingRateContainer"></div>
+            <label for="numberOfSamples">Liczba próbek:</label>
+            <select id="numberOfSamples">
+                <option value="8" selected>8</option>
+                <option value="16">16</option>
+                <option value="32">32</option>
+                <option value="64">64</option>
+                <option value="128">128</option>
+                <option value="256">256</option>
+                <option value="512">512</option>
+                <option value="1024">1024</option>
+            </select>
+            <input type="text" id="samplingRate" placeholder="Częstotliwość próbkowania" />
+            <h4>Dynamiczne generowanie parametrów składowych harmonicznych</h4>
+
+            <!-- Wybór liczby składowych: min=1, max=10 -->
+            <label for="numComponents">Ilość składowych (1-10):</label>
+            <input type="number" id="numComponents" min="1" max="10" value="2" oninput="createComponentsInputs()" />
+
+            <!-- Tutaj będą się tworzyć pola dla każdej składowej -->
+            <div id="componentsContainer"></div>
+
+</body>
+
+</html>
+
+<button onclick=" FFTAlgorithm();">Dokonaj analizy FFT</button>
+</article>
+
+<article id="results"></article>
+<article id="FFTresults"></article>
+<article><canvas id="SignalAndSamples"></canvas>
+    <article>
+        <article>
+            <canvas id="fftBarChart" width="800" height="400"></canvas>
+        </article>
+        </main>
+        </body>
+
+        </html>
