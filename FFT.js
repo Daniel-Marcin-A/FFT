@@ -83,6 +83,7 @@ function createComponentsInputs() {
     container.appendChild(componentSection);
   }
 }
+createComponentsInputs();
 function generateContinuousSignal() {
   continuousSignal.length = 0;
   // w pętli np. co 0.02
